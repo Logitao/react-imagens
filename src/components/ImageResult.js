@@ -1,30 +1,20 @@
-import React, { Component } from 'react';
 import { Card, CardTitle, Col } from 'react-materialize';
-import PropTypes from 'prop-types';
+import React from 'react';
 
-export default class ImageResult extends Component {
-  static propTypes = {
-    image: PropTypes.object.isRequired
-  };
-
-  render() {
-    const { image } = this.props;
-    return (
-      <div>
-        <Col s={12} m={6} l={3}>
-          <Card
-            className="small"
-            header={<CardTitle image={image.webformatURL} />}
-            actions={[
-              <a href={image.webformatURL} target="_blank">
-                Ver Imagem
-              </a>
-            ]}
-          >
-            <p>{image.tags}</p>
-          </Card>
-        </Col>
-      </div>
-    );
-  }
-}
+export const ImageResult = props => (
+  <div>
+    <Col s={12} m={6} l={3}>
+      <Card
+        className="small"
+        header={<CardTitle image={props.image.webformatURL} />}
+        actions={[
+          <a href={props.image.webformatURL} target="_blank">
+            Ver Imagem
+          </a>
+        ]}
+      >
+        <p>{props.image.tags}</p>
+      </Card>
+    </Col>
+  </div>
+);

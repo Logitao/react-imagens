@@ -1,16 +1,6 @@
 import React, { Component } from 'react';
-import {
-  Button,
-  Icon,
-  Col,
-  Row,
-  NavItem,
-  Navbar,
-  Input,
-  Card,
-  CardTitle
-} from 'react-materialize';
-import ImageResult from './components/ImageResult';
+import { Row, NavItem, Navbar, Input } from 'react-materialize';
+import { ImageResult } from './components/ImageResult';
 import axios from 'axios';
 
 const navStyle = {
@@ -29,7 +19,6 @@ export default class App extends Component {
     url: 'https://pixabay.com/api/',
     images: []
   };
-
   onChange = e =>
     this.setState(
       {
@@ -96,7 +85,7 @@ export default class App extends Component {
           </Row>
           <br />
           <div style={containerStyle}>
-            <h1>Resultados</h1>
+            <h1 className="flow-text">Resultados</h1>
             <hr />
             <Row>
               {this.state.images.map((image, index) => (
